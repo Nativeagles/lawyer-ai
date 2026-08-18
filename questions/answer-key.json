@@ -1,0 +1,27 @@
+{
+  "note": "Gold sections per question, grounded in actual corpus headings rather than recall. Deliberately generous: where more than one section fairly answers, all are accepted, so a low score cannot be an artifact of a narrow key.",
+  "key": {
+    "Am I owed overtime if my employer pays me a fixed salary?": ["29 CFR 541.2","29 CFR 541.100","29 CFR 541.600","29 CFR 541.602","29 CFR 541.3"],
+    "I am a shift manager but mostly do the same work as my crew. Am I exempt from overtime?": ["29 CFR 541.106","29 CFR 541.700","29 CFR 541.100","29 CFR 541.702"],
+    "What is the minimum salary to be exempt from overtime as an executive?": ["29 CFR 541.600","29 CFR 541.100"],
+    "My employer pays me $3 an hour plus tips. Is that legal?": ["29 CFR 531.51","29 CFR 531.59","29 CFR 531.50","29 CFR 531.56"],
+    "Can my manager take a share of my tips?": ["29 CFR 531.52","29 CFR 531.54"],
+    "I spend an hour before opening doing side work with no customers. Do I get the full minimum wage for it?": ["29 CFR 531.56","29 CFR 531.51","29 CFR 531.59","29 CFR 785.11","29 CFR 785.12"],
+    "Does my employer have to pay me for time spent travelling between job sites?": ["29 CFR 785.38","29 CFR 785.39","29 CFR 785.41","29 CFR 785.35"],
+    "Am I owed pay for being on call at home overnight?": ["29 CFR 785.17","29 CFR 785.16","29 CFR 785.23"],
+    "Do I get paid for my meal break if I have to stay at my desk?": ["29 CFR 785.19"],
+    "Is time spent putting on required safety gear before my shift paid?": ["29 CFR 785.24","29 CFR 785.25","29 CFR 785.26","29 CFR 785.9","29 CFR 785.7"],
+    "My employer calls me an independent contractor but controls my schedule. Is that right?": ["29 CFR 795.110","29 CFR 795.105"],
+    "I drive for a delivery app. Am I an employee or a contractor?": ["29 CFR 795.105","29 CFR 795.110"],
+    "My employer deducted the cost of a broken register from my paycheck. Is that allowed?": ["29 CFR 531.35","29 CFR 531.36","29 CFR 531.37"],
+    "Can my employer make me pay for my own uniform if it drops me below minimum wage?": ["29 CFR 531.35","29 CFR 531.32","29 CFR 531.3","29 CFR 531.36","29 CFR 531.37"],
+    "I worked 45 hours one week and 35 the next. Can they average it to avoid overtime?": ["29 CFR 778.104","29 CFR 778.103"],
+    "Does a bonus change the overtime rate I am owed?": ["29 CFR 778.208","29 CFR 778.209","29 CFR 778.211"],
+    "How many weeks of FMLA leave can I take for a new baby?": ["29 CFR 825.200","29 CFR 825.120"],
+    "Does my employer have to pay me during FMLA leave?": ["29 CFR 825.207"],
+    "Can my employer make me use vacation during FMLA leave?": ["29 CFR 825.207"],
+    "Do I have to work somewhere a minimum time before taking FMLA leave?": ["29 CFR 825.110"],
+    "Is my small employer covered by the FMLA?": ["29 CFR 825.104","29 CFR 825.105","29 CFR 825.106"],
+    "Can I take FMLA leave a few days at a time instead of all at once?": ["29 CFR 825.202","29 CFR 825.203","29 CFR 825.205"]
+  }
+}

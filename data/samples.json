@@ -1,0 +1,117 @@
+[
+  {
+    "coverage": "PARTIAL",
+    "governing": "FEDERAL",
+    "limits": "This law tells you being paid a salary is not enough by itself to lose overtime \u2014 you also need to meet a duties test and salary-level test for one of the specific exemptions; a full check of your specific job duties against those exemptions is fact-specific and beyond what a general answer can settle.",
+    "claims": [
+      {
+        "text": "Being called 'salaried' or having any job title does not by itself decide whether you get overtime. What matters is whether your actual pay and job duties meet the specific legal requirements for an exemption.",
+        "cite": "29 CFR 541.2",
+        "quote": "A job title alone is insufficient to establish the exempt status of an employee. The exempt or nonexempt status of any particular employee must be determined on the basis of whether the employee's salary and duties meet the requirements of the regulations in this part.",
+        "url": "https://www.ecfr.gov/current/title-29/part-541/section-541.2",
+        "heading": "541.2 Job titles insufficient.",
+        "sourceType": "statute"
+      },
+      {
+        "text": "To be exempt as an executive, administrative, or professional employee, you must be paid at least $684/week on a salary basis AND your actual job duties must meet detailed tests \u2014 simply being paid a salary is not enough.",
+        "cite": "29 CFR 541.100",
+        "quote": "Compensated on a salary basis pursuant to \u00a7 541.600 at a rate of not less than $684 per week (or $455 per week if employed in the Commonwealth of the Northern Mariana Islands, Guam, Puerto Rico, or the U.S. Virgin Islands by employers other than the Federal government, or $380 per week if employed in American Samoa by employers other than the Federal government), exclusive of board, lodging or other facilities;",
+        "url": "https://www.ecfr.gov/current/title-29/part-541/section-541.100",
+        "heading": "541.100 General rule for executive employees.",
+        "sourceType": "statute"
+      },
+      {
+        "text": "Manual laborers and other 'blue collar' workers cannot be exempt from overtime no matter how they are paid or how highly paid they are, even if they are paid a salary.",
+        "cite": "29 CFR 541.3",
+        "quote": "Such nonexempt \u201cblue collar\u201d employees gain the skills and knowledge required for performance of their routine manual and physical work through apprenticeships and on-the-job training, not through the prolonged course of specialized intellectual instruction required for exempt learned professional employees such as medical doctors, architects and archeologists.",
+        "url": "https://www.ecfr.gov/current/title-29/part-541/section-541.3",
+        "heading": "541.3 Scope of the section 13(a)(1) exemptions.",
+        "sourceType": "statute"
+      },
+      {
+        "text": "If your employer improperly takes money out of your salary in ways not allowed under the rules, you could lose the exemption entirely and be owed overtime even though you're paid a salary.",
+        "cite": "29 CFR 541.603",
+        "quote": "An employer who makes improper deductions from salary shall lose the exemption if the facts demonstrate that the employer did not intend to pay employees on a salary basis.",
+        "url": "https://www.ecfr.gov/current/title-29/part-541/section-541.603",
+        "heading": "541.603 Effect of improper deductions from salary.",
+        "sourceType": "statute"
+      }
+    ],
+    "dropped": 0,
+    "model": "claude-sonnet-5",
+    "usage": {
+      "cacheRead": 237081,
+      "cacheWrite": 0,
+      "output": 834
+    },
+    "jurisdiction": {
+      "code": "TX",
+      "label": "Texas",
+      "notes": "Texas sets no daily overtime, requires no meal or rest breaks, and adds no salary threshold above the federal one \u2014 so for those questions federal law is the whole answer."
+    },
+    "question": "My employer pays me a salary and says that means I never get overtime. Is that right?"
+  },
+  {
+    "coverage": "PARTIAL",
+    "governing": "STATE",
+    "limits": "This answer relies on the Texas Workforce Commission's published guidance about the Texas Payday Law, not the text of the statute itself, which is not available here; the actual Texas Labor Code provisions on final wages are not shown above.",
+    "claims": [
+      {
+        "text": "Because you quit, your employer has until your next regularly scheduled payday to pay your final wages \u2014 not six days like someone who is fired or laid off.",
+        "cite": "TWC Payday Law \u2014 Final Wages",
+        "quote": "Quit / Resign / Retire: Final payment is due on the next regularly scheduled payday after the effective date of resignation.",
+        "url": "https://www.twc.texas.gov/programs/wage-and-hour/texas-payday-law#final-wages",
+        "heading": "Final Wages",
+        "sourceType": "guidance"
+      },
+      {
+        "text": "This rule about final pay timing comes from the state agency's guidance on the Texas Payday Law, not from the federal law shown above.",
+        "cite": "TWC Payday Law \u2014 Final Wages",
+        "quote": "The deadline to pay the employee\u2019s final wages is listed below.",
+        "url": "https://www.twc.texas.gov/programs/wage-and-hour/texas-payday-law#final-wages",
+        "heading": "Final Wages",
+        "sourceType": "guidance"
+      },
+      {
+        "text": "If your employer still misses that payday, you can file a wage claim with TWC, but you must do it within 180 days of when the wages were originally due.",
+        "cite": "TWC Payday Law \u2014 How to File a Wage Claim",
+        "quote": "The deadline for filing a wage claim is no later than 180 days after the date the wages were originally due to be paid.",
+        "url": "https://www.twc.texas.gov/programs/wage-and-hour/texas-payday-law#how-to-file-a-wage-claim",
+        "heading": "How to File a Wage Claim",
+        "sourceType": "guidance"
+      }
+    ],
+    "dropped": 0,
+    "model": "claude-sonnet-5",
+    "usage": {
+      "cacheRead": 237081,
+      "cacheWrite": 0,
+      "output": 506
+    },
+    "jurisdiction": {
+      "code": "TX",
+      "label": "Texas",
+      "notes": "Texas sets no daily overtime, requires no meal or rest breaks, and adds no salary threshold above the federal one \u2014 so for those questions federal law is the whole answer."
+    },
+    "question": "I quit my job last week and my employer still has not given me my final paycheck. How long do they have?"
+  },
+  {
+    "coverage": "NONE",
+    "governing": "NEITHER",
+    "limits": "Firing someone because they are pregnant is a discrimination question, not a wage-or-hours question \u2014 it falls under Title VII of the Civil Rights Act (as amended by the Pregnancy Discrimination Act) and is handled by the U.S. Equal Employment Opportunity Commission, not by the wage-and-hour rules in the materials I have.",
+    "claims": [],
+    "dropped": 0,
+    "model": "claude-sonnet-5",
+    "usage": {
+      "cacheRead": 237081,
+      "cacheWrite": 0,
+      "output": 650
+    },
+    "jurisdiction": {
+      "code": "TX",
+      "label": "Texas",
+      "notes": "Texas sets no daily overtime, requires no meal or rest breaks, and adds no salary threshold above the federal one \u2014 so for those questions federal law is the whole answer."
+    },
+    "question": "My manager fired me after I told him I was pregnant. Can I sue?"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "note": "The hard cases. Each has a genuine federal component this corpus covers AND a component it does not. A flat decline is wrong; a confident complete answer is worse. Expected behaviour is labelled per question.",
+  "categories": {
+    "PARTIAL": "Answer the federal part from the corpus AND flag what it cannot decide.",
+    "DECLINE": "Sounds wage-and-hour but is governed elsewhere. Decline and route.",
+    "FULL": "Entirely answerable from the corpus. Control, to detect over-declining."
+  },
+  "questions": [
+    {"q": "I am a salaried manager in California earning $70,000. Am I owed overtime?", "expect": "PARTIAL", "why": "Federal exemption test is in the corpus; California sets its own higher salary threshold and stricter duties test."},
+    {"q": "My employer pays me every two weeks. Is that legal?", "expect": "DECLINE", "why": "Pay frequency is state law. The FLSA does not set it."},
+    {"q": "Am I owed double time for working a Sunday?", "expect": "PARTIAL", "why": "Federal law requires no premium for weekends as such; some states do."},
+    {"q": "My employer did not give me my final paycheck when I quit. What can I do?", "expect": "DECLINE", "why": "Final-pay timing is state law."},
+    {"q": "I am 16 and work 30 hours a week during school. Is that allowed?", "expect": "DECLINE", "why": "Child labour is 29 CFR 570, which is not in this corpus, though it sounds squarely wage-and-hour."},
+    {"q": "Can my employer make me work twelve-hour shifts?", "expect": "PARTIAL", "why": "Federal law caps no hours for adults, only requires overtime past 40; state daily-overtime rules differ."},
+    {"q": "I was misclassified as a contractor. Can I sue for back overtime?", "expect": "PARTIAL", "why": "Classification test is in the corpus; the right to sue, damages and limitation periods are not."},
+    {"q": "Can my employer cut my hours so I lose my health benefits?", "expect": "DECLINE", "why": "Benefits eligibility is ERISA and the ACA, not wage-and-hour."},
+    {"q": "My tips were pooled with the kitchen staff. Is that legal?", "expect": "FULL", "why": "Tip pooling is squarely 29 CFR 531."},
+    {"q": "Do I get paid for a fifteen minute coffee break?", "expect": "FULL", "why": "Rest periods are squarely 29 CFR 785."},
+    {"q": "My employer requires unpaid training on Saturdays. Is that legal?", "expect": "FULL", "why": "Training time is squarely 29 CFR 785."},
+    {"q": "I am an undocumented worker. Am I still owed the minimum wage?", "expect": "PARTIAL", "why": "The corpus defines wage obligations without reference to status; immigration consequences are elsewhere."}
+  ]
+}

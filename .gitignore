@@ -1,0 +1,19 @@
+node_modules/
+.env
+*.log
+
+# research artefacts from building this — not needed to run it
+data/answers-*.json
+data/labels-*.json
+data/currency-cache.json
+data/currency-sweep.json
+data/packets.txt
+data/*.log
+
+# never commit an image of a credential
+Screenshot*.png
+*.png
+
+# review documents contain a personal email address and candid business
+# figures — they are deliverables, not part of the app
+docs/

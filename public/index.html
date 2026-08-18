@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wage &amp; Hour — what the law actually says</title>
+<style>
+  :root{
+    --bg:#fbfaf8; --fg:#1a1a1a; --muted:#5c5c5c; --line:#e2ded8;
+    --card:#fff; --accent:#7a3b2e; --quote:#f4f1ec; --warn:#8a5a00; --warnbg:#fdf6e6;
+  }
+  :root:not([data-theme="light"]) { }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#16161a; --fg:#ececec; --muted:#a3a3a3; --line:#2e2e35;
+      --card:#1e1e24; --accent:#e0947f; --quote:#232329; --warn:#e8bf7a; --warnbg:#2a2318;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#16161a; --fg:#ececec; --muted:#a3a3a3; --line:#2e2e35;
+    --card:#1e1e24; --accent:#e0947f; --quote:#232329; --warn:#e8bf7a; --warnbg:#2a2318;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.6 Georgia,'Iowan Old Style',serif;padding:0 1rem 5rem}
+  .wrap{max-width:44rem;margin:0 auto}
+  header{padding:3rem 0 1.5rem;border-bottom:1px solid var(--line)}
+  h1{font-size:1.7rem;line-height:1.25;margin:0 0 .5rem;font-weight:600;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0;font-size:1rem}
+  form{margin:2rem 0 1rem}
+  label{display:block;font-size:.83rem;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--muted);margin-bottom:.45rem;font-family:system-ui,sans-serif}
+  select,textarea,button{font-family:inherit;font-size:1rem;color:var(--fg);
+    background:var(--card);border:1px solid var(--line);border-radius:7px;padding:.7rem .8rem;width:100%}
+  textarea{min-height:6.5rem;resize:vertical;line-height:1.55}
+  select{margin-bottom:1.2rem}
+  button{margin-top:1rem;background:var(--accent);color:#fff;border:none;
+    font-family:system-ui,sans-serif;font-weight:600;cursor:pointer;padding:.8rem}
+  button[disabled]{opacity:.55;cursor:default}
+  .hint{font-size:.87rem;color:var(--muted);margin:.5rem 0 0}
+  .banner{background:var(--warnbg);color:var(--warn);border:1px solid var(--line);
+    border-radius:7px;padding:.8rem .9rem;margin:1.2rem 0;font-size:.92rem}
+  .status{padding:1.4rem 0;color:var(--muted)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:9px;
+    padding:1.1rem 1.2rem;margin:1rem 0}
+  .badge{display:inline-block;font-family:system-ui,sans-serif;font-size:.72rem;
+    letter-spacing:.07em;text-transform:uppercase;border:1px solid var(--line);
+    border-radius:99px;padding:.2rem .65rem;color:var(--muted);margin-right:.4rem}
+  .point{margin:0 0 .7rem;font-size:1.05rem}
+  blockquote{margin:.6rem 0 .5rem;padding:.7rem .9rem;background:var(--quote);
+    border-left:3px solid var(--accent);border-radius:0 5px 5px 0;
+    font-size:.93rem;color:var(--fg);font-style:italic}
+  .src{font-family:system-ui,sans-serif;font-size:.83rem}
+  .src a{color:var(--accent)}
+  .guidance{border-left:3px solid var(--warn)}
+  .tag{display:inline-block;font-family:system-ui,sans-serif;font-size:.7rem;
+    letter-spacing:.06em;text-transform:uppercase;background:var(--warnbg);color:var(--warn);
+    border-radius:4px;padding:.12rem .45rem;margin-left:.4rem;vertical-align:.05rem}
+  footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);
+    font-size:.85rem;color:var(--muted)}
+  footer p{margin:.5rem 0}
+  .dropped{font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);margin-top:1rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>What does the law actually say?</h1>
+  <p class="sub">Wage, hour and leave questions, answered only from the text of the law — with the exact words quoted and linked, every time.</p>
+  <div class="banner" style="margin-top:1.2rem"><strong>Unreviewed prototype.</strong> No lawyer has checked a single answer here. It quotes the law accurately — that part is verified automatically — but whether the right law was quoted for your situation is exactly what has not been reviewed. Do not rely on it for a decision that matters.</div>
+</header>
+
+<form id="f">
+  <label for="j">Where do you work?</label>
+  <select id="j"></select>
+  <label for="q">What's your question?</label>
+  <textarea id="q" placeholder="e.g. My employer pays me a salary and says that means no overtime. Is that right?"></textarea>
+  <button id="go" type="submit">Ask</button>
+  <p class="hint">Nothing you type is stored. This is not legal advice.</p>
+</form>
+
+<div id="jnote"></div>
+<div id="out"></div>
+
+<footer>
+  <p id="prov"></p>
+  <p><strong>This is not legal advice and cannot be.</strong> It reads statutes and regulations and quotes them back. It does not know your facts, your contract, your employer, or any court decision interpreting these words — and courts are often what decides how they apply.</p>
+  <p>Every quoted passage is checked against the official source before it reaches you. Anything that doesn't match exactly is thrown away rather than shown, so you may see fewer points than you'd expect. That's deliberate.</p>
+</footer>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let JUR=[];
+
+fetch('/api/jurisdictions').then(r=>r.json()).then(d=>{
+  JUR=d.jurisdictions;
+  $('j').innerHTML=d.jurisdictions.map(x=>
+    `<option value="${x.code}">${x.label}${x.sections?` — federal + ${x.sections} ${x.hasStateLaw?'state provisions':'agency sections'}`:''}</option>`).join('');
+  $('prov').textContent=`Answered by ${d.model} from ${d.federalSections} sections of 29 CFR as published ${d.corpusAsOf}, plus state law where shown above.`;
+  showNote();
+});
+$('j').addEventListener('change',showNote);
+
+function showNote(){
+  const j=JUR.find(x=>x.code===$('j').value);
+  $('jnote').innerHTML = j && !j.hasStateLaw && j.code!=='US'
+    ? `<div class="banner"><strong>${j.label}: federal statutes, plus ${j.label} agency guidance.</strong> ${j.label} adds little to federal wage and hour law, so most questions are answered from the statute itself. For pay frequency, final paychecks and deductions, ${j.label} law governs and its text isn't available — so you get the Texas Workforce Commission's own published guidance instead, clearly marked. That's a reliable summary by the agency that runs the law, not the words of the law.</div>`
+    : '';
+}
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+$('f').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const question=$('q').value.trim();
+  if(question.length<8){$('out').innerHTML='<p class="status">Write a little more so I know what you\'re asking.</p>';return}
+  $('go').disabled=true; $('go').textContent='Reading the law…';
+  $('out').innerHTML='<p class="status">Reading the law. This takes a few seconds — it reads the whole thing, not a summary.</p>';
+  try{
+    const r=await fetch('/api/ask',{method:'POST',headers:{'content-type':'application/json'},
+      body:JSON.stringify({question,jurisdiction:$('j').value})});
+    const d=await r.json();
+    if(!r.ok){$('out').innerHTML=`<p class="status">${esc(d.error||'Something went wrong.')}</p>`;return}
+    render(d);
+  }catch(err){
+    $('out').innerHTML='<p class="status">Couldn\'t reach the server. Try again.</p>';
+  }finally{ $('go').disabled=false; $('go').textContent='Ask'; }
+});
+
+function render(d){
+  const decides = d.coverage==='FULL' ? 'This answers your question'
+    : d.coverage==='PARTIAL' ? 'This answers part of your question'
+    : 'The law here does not answer this';
+  const gov = {FEDERAL:'Federal law decides this',STATE:'State law decides this',
+    BOTH:'Federal and state law both apply',NEITHER:'Neither decides it'}[d.governing]||'';
+
+  let html=`<div class="card"><div><span class="badge">${esc(decides)}</span>`
+    + (gov?`<span class="badge">${esc(gov)}</span>`:'') + `</div>`;
+
+  if(d.limits) html+=`<p class="point" style="margin-top:.9rem"><strong>What this can't tell you:</strong> ${esc(d.limits)}</p>`;
+  html+=`</div>`;
+
+  for(const c of d.claims){
+    const g = c.sourceType==='guidance';
+    html+=`<div class="card"><p class="point">${esc(c.text)}`
+      +(g?`<span class="tag">agency guidance, not statute</span>`:'')+`</p>`
+      +`<blockquote${g?' class="guidance"':''}>${esc(c.quote)}</blockquote>`
+      +`<p class="src">${esc(c.cite)}${!g&&c.heading?' — '+esc(c.heading):''}`
+      +(c.url?` · <a href="${esc(c.url)}" target="_blank" rel="noopener">read it at the source</a>`:'')+`</p></div>`;
+  }
+
+  if(!d.claims.length && d.coverage!=='NONE')
+    html+=`<p class="status">Nothing here could be quoted accurately enough to show you.</p>`;
+  if(d.dropped>0)
+    html+=`<p class="dropped">${d.dropped} point${d.dropped>1?'s were':' was'} discarded because the quote didn't match the source exactly.</p>`;
+
+  $('out').innerHTML=html;
+}
+</script>
+</body>
+</html>

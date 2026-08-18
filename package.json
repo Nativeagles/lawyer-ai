@@ -1,0 +1,32 @@
+{
+  "name": "lawyer-ai-probe",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Probe: can a retrieval-first legal answerer emit only verifiable citations?",
+  "scripts": {
+    "corpus": "node bin/build-corpus.js",
+    "probe": "node bin/probe.js",
+    "packets": "node bin/packets.js",
+    "live": "node bin/live.js",
+    "exposure": "node bin/exposure.js",
+    "eval": "node bin/retrieval-eval.js",
+    "answer-eval": "node bin/answer-eval.js answers-retrieval-live-k4.json answers-retrieval-live-k20.json",
+    "v2": "node bin/v2.js",
+    "corpus:ca": "node bin/build-ca.js",
+    "v3": "node bin/v3.js",
+    "v3-eval": "node bin/v3-eval.js",
+    "v2-eval": "node bin/v2-eval.js",
+    "model-compare": "node bin/model-compare.js",
+    "near-miss-eval": "node bin/near-miss-eval.js",
+    "label": "node bin/label.js",
+    "label-compare": "node bin/label-compare.js",
+    "currency": "node bin/currency.js",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "corpus:twc": "node bin/build-twc.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.117.1"
+  }
+}

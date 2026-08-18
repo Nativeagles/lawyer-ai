@@ -1,0 +1,17 @@
+{
+  "note": "Same 12 questions, now asked for a worker in California with California law loaded. Expectations are PROVISIONAL — the last hand-written key was wrong more often than the model was, so mismatches are read as prompts to inspect, not as model failures.",
+  "questions": [
+    {"q": "I am a salaried manager in California earning $70,000. Am I owed overtime?", "expect": "FULL", "governing": "STATE", "why": "CA sets the exempt salary floor at twice the state minimum wage for full-time work, which lands near $70,000 — so state law, not federal, decides this."},
+    {"q": "My employer pays me every two weeks. Is that legal?", "expect": "FULL", "governing": "STATE", "why": "Lab. Code 204 sets pay frequency. Federal law is silent, so loading CA converts this from a decline into an answer."},
+    {"q": "Am I owed double time for working a Sunday?", "expect": "FULL", "governing": "STATE", "why": "Lab. Code 510 covers seventh-consecutive-day and over-12-hour premiums; Sunday as such is not special."},
+    {"q": "My employer did not give me my final paycheck when I quit. What can I do?", "expect": "FULL", "governing": "STATE", "why": "Lab. Code 202 sets the deadline and 203 the waiting-time penalty."},
+    {"q": "I am 16 and work 30 hours a week during school. Is that allowed?", "expect": "NONE", "governing": "NEITHER", "why": "Child labour is in neither corpus."},
+    {"q": "Can my employer make me work twelve-hour shifts?", "expect": "FULL", "governing": "STATE", "why": "Lab. Code 510 requires double time beyond 12 hours."},
+    {"q": "I was misclassified as a contractor. Can I sue for back overtime?", "expect": "PARTIAL", "governing": "BOTH", "why": "2775 supplies the ABC test and 1194 a right of action, but limitation periods and procedure are absent."},
+    {"q": "Can my employer cut my hours so I lose my health benefits?", "expect": "PARTIAL", "governing": "NEITHER", "why": "Benefits eligibility is ERISA and the ACA, in neither corpus."},
+    {"q": "My tips were pooled with the kitchen staff. Is that legal?", "expect": "FULL", "governing": "STATE", "why": "Lab. Code 351 bars the employer taking any gratuity."},
+    {"q": "Do I get paid for a fifteen minute coffee break?", "expect": "PARTIAL", "governing": "BOTH", "why": "Honest gap: CA rest periods are created by the IWC Wage Orders, which this corpus does NOT contain. 226.7 only supplies the premium for denying one."},
+    {"q": "My employer requires unpaid training on Saturdays. Is that legal?", "expect": "FULL", "governing": "BOTH", "why": "Training time is federal 785; CA overtime applies on top."},
+    {"q": "I am an undocumented worker. Am I still owed the minimum wage?", "expect": "PARTIAL", "governing": "BOTH", "why": "Lab. Code 1171.5 is the express CA provision and was not fetched; immigration consequences are outside both."}
+  ]
+}
